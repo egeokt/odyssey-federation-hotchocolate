@@ -18,7 +18,25 @@ To start the server, from the root directory, run:
 dotnet watch
 ```
 
-Right now, the server returns a simple "Hello World" message from `http://localhost:5059`.
+Right now, the project is a GraphQL server returning playlist and track data at `http://localhost:5059/graphql`. You can use [Apollo Sandbox](https://studio.apollographql.com/sandbox?endpoint=http://localhost:5059/graphql) to connect to the endpoint and send queries.
+
+Try running this query:
+
+```graphql
+query GetFeaturedPlaylists {
+  featuredPlaylists {
+    id
+    name
+    description
+    tracks {
+      id
+      name
+      explicit
+      uri
+    }
+  }
+}
+```
 
 The `final` branch of this repo contains the final stage of the course, with all of the steps and code completed! If you get stuck, you can refer to it and compare your code.
 
