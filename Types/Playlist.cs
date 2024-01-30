@@ -1,8 +1,10 @@
-﻿using SpotifyWeb;
+﻿using ApolloGraphQL.HotChocolate.Federation;
+using SpotifyWeb;
 
 namespace Odyssey.MusicMatcher;
 
 [GraphQLDescription("A curated collection of tracks designed for a specific activity or mood.")]
+[Key("id")]
 public class Playlist
 {
     [GraphQLDescription("The ID for the playlist.")]
@@ -30,6 +32,16 @@ public class Playlist
     }
 
     private List<Track>? _tracks;
+
+    [ReferenceResolver]
+    public static async Task<Playlist?> GetPlaylistById(
+        SpotifyService spotifyService,
+        [Parent] Playlist playlist
+    )
+    {
+        var response = await spotifyService.GetPlaylistAsync(playlist.Id);
+        return new Playlist(response);
+    }
 
     public Playlist(string id, string name)
     {
