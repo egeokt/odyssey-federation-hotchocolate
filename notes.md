@@ -1,4 +1,5 @@
 # Notes About Federation with .NET & Hot Chocolate
+** tutorial link: https://www.apollographql.com/tutorials/federation-hotchocolate
 
 ## supergraph: federated graphql architecture
 Creates a network of
