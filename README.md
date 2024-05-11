@@ -1,3 +1,5 @@
+Note: Forked this repo to play around with GraphQL concepts via .NET & Hot Chocolate
+
 # (Odyssey Course) Federation with .NET (C#) & Hot Chocolate 
 
 Welcome to the starter code for **Federation with .NET (C#) & Hot Chocolate**. You can find the [course lessons and instructions](https://apollographql.com/tutorials/federation-hotchocolate) on Odyssey, [Apollo](https://apollographql.com)'s learning platform.
